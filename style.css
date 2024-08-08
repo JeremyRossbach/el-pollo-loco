@@ -1,0 +1,555 @@
+@font-face {
+    font-family: 'zabras';
+    src: url('fonts/zabars.ttf');
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    background-image: url('img/desert.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    cursor: default;
+}
+
+::backdrop {
+    background-color: #ffffff00;
+}
+
+h1 {
+    margin: 40px;
+    font-size: 100px;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 3px #ffffff;
+    animation: slideIn 1s forwards;
+}
+
+#startScreen,
+#howToPlayButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -200px;
+    animation: slideIn 1s forwards;
+}
+
+.startScreenButtons {
+    display: flex;
+    gap: 10vw;
+}
+
+.woodboard,
+.woodboard2 {
+    position: relative;
+    width: 400px;
+}
+
+.woodboard2 {
+    transform: rotate(180deg);
+}
+
+.play,
+.howToPlay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 130px;
+    font-size: 90px;
+    text-shadow: 2px 2px 3px #CECECE;
+    cursor: pointer;
+}
+
+.howToPlay {
+    font-size: 60px;
+}
+
+.play:hover+.sombrero {
+    display: none;
+    margin-bottom: 340px;
+}
+
+.sombrero {
+    position: absolute;
+    width: 350px;
+    margin-left: 340px;
+    margin-bottom: 140px;
+}
+
+#introScreen {
+    display: none;
+    justify-content: space-evenly;
+    gap: 100px;
+    margin-bottom: 80px;
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        right: -100%;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    font-size: 30px;
+}
+
+.wood {
+    position: relative;
+    width: 200px;
+}
+
+.subheadline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    position: absolute;
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 3px #CECECE;
+    z-index: 1;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 3px #CECECE;
+}
+
+p {
+    margin: 0;
+    text-align: center;
+}
+
+.left,
+.right,
+.space,
+.d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin: 7px;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+    text-shadow: none;
+}
+
+.space {
+    width: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+.characterImage {
+    width: 200px;
+    margin-top: -100px;
+}
+
+.coinAndSalsa {
+    display: flex;
+    margin-top: 92px;
+}
+
+.coinImage {
+    width: 200px;
+}
+
+.salsaImage {
+    width: 150px;
+    height: 150px;
+}
+
+.chickenImage {
+    width: 252px;
+}
+
+canvas {
+    display: none;
+    margin-top: 150px;
+    background-color: black;
+}
+
+#btnLeftRight,
+#btnJumpThrow {
+    display: flex;
+    gap: 10px;
+    margin-inline: 16px;
+}
+
+@media only screen and (max-width: 1400px) {
+
+    #btnLeft,
+    #btnRight,
+    #btnJump,
+    #btnThrow {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    canvas {
+        width: 100%;
+    }
+
+    #gameOverScreen {
+        width: 100% !important;
+    }
+
+    #gameWonScreen {
+        width: 50% !important;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    canvas {
+        height: 100vh;
+    }
+
+    #gameOverScreen {
+        height: 100vh !important;
+    }
+}
+
+#text {
+    text-align: center;
+}
+
+#previousNext {
+    display: none;
+    justify-content: center;
+    gap: 32px;
+    animation: slideIn 1s forwards;
+}
+
+.previous,
+.next {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.previousWood,
+.nextWood {
+    position: relative;
+    display: flex;
+    width: 200px;
+}
+
+.nextWood {
+    transform: rotate(180deg);
+}
+
+.goBack,
+.startGame {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 60px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+#buttons {
+    position: absolute;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+#buttonsCenter {
+    display: flex;
+    gap: 8px;
+}
+
+#muteButton,
+#restartButton,
+#fullscreenButton,
+#btnLeft,
+#btnRight,
+#btnJump,
+#btnThrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 45px;
+    border: 0;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+    box-shadow: 2px 2px 3px #CECECE;
+    cursor: pointer;
+}
+
+#btnLeft,
+#btnRight,
+#btnJump,
+#btnThrow {
+    display: none;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+}
+
+#muteButton {
+    background-image: url('img/unmute.png');
+}
+
+#restartButton {
+    background-image: url('img/restart.png');
+}
+
+#fullscreenButton {
+    background-image: url('img/fullscreen.png');
+}
+
+#fullscreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.canvasAndGameScreen {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+#gameOverScreen,
+#gameWonScreen {
+    position: absolute;
+    display: none;
+    width: 720px;
+    height: -webkit-fill-available;
+    margin-top: 150px;
+    /* z-index: 999; */
+}
+
+#gameWonScreen {
+    width: 350px;
+    height: auto;
+    margin-bottom: 70px;
+    margin-top: 0;
+}
+
+#rotateDevice {
+    position: absolute;
+    display: none;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    z-index: 999;
+    font-size: 34px;
+    text-shadow: 2px 2px 3px #ffffff;
+}
+
+#jura {
+    display: flex;
+    gap: 34px;
+    margin: 40px;
+    font-size: 34px;
+    animation: slideIn 1s forwards;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+@media screen and (orientation:portrait) {
+    #rotateDevice {
+        display: flex;
+    }
+
+    #fullscreen {
+        display: none;
+    }
+}
+
+@media screen and (max-height: 700px) {
+
+    #startScreen,
+    #howToPlayButton {
+        margin-top: 0;
+    }
+
+    h1 {
+        margin: 10px;
+        font-size: 76px;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    canvas {
+        margin-top: 0;
+    }
+
+    #gameOverScreen,
+    #gameWonScreen {
+        margin-top: 0;
+    }
+
+    .characterImage {
+        display: none;
+    }
+
+    .coinAndSalsa {
+        display: none;
+    }
+
+    .coinImage {
+        display: none;
+    }
+
+    .salsaImage {
+        display: none;
+    }
+
+    .chickenImage {
+        display: none;
+    }
+}
+
+@media screen and (max-height: 500px) {
+
+    #startScreen,
+    #howToPlayButton {
+        margin-top: 50px;
+    }
+
+    .woodboard,
+    .woodboard2 {
+        width: 250px;
+    }
+
+    .sombrero {
+        width: 220px;
+        margin-left: 230px;
+        margin-bottom: 90px;
+    }
+
+    .play {
+        font-size: 60px;
+    }
+
+    .howToPlay {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-height: 900px) {
+    #introScreen {
+        gap: 0;
+        margin-bottom: 0;
+    }
+
+    .container {
+        width: 220px;
+    }
+
+    .wood,
+    .previousWood,
+    .nextWood {
+        width: 150px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    .text {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    .characterImage {
+        width: 100px;
+        margin-top: -27px;
+    }
+
+    .coinAndSalsa {
+        margin-top: 75px;
+    }
+
+    .coinImage {
+        width: 100px;
+    }
+
+    .salsaImage {
+        width: 100px;
+        height: 100px;
+    }
+
+    .chickenImage {
+        width: 152px;
+    }
+
+    .left,
+    .right,
+    .space,
+    .d {
+        width: 20px;
+        height: 20px;
+        margin-inline: 8px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .space {
+        width: 65px;
+    }
+
+    .goBack,
+    .startGame {
+        font-size: 30px;
+    }
+
+    #jura {
+        font-size: 28px;
+    }
+}

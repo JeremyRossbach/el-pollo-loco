@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'zabras';
+    src: url('../fonts/zabars.ttf');
+}
+
+body {
+    margin: 40px;
+    background-image: url('../img/desert.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px 3px #ffffff;
+    letter-spacing: 1px;
+    cursor: default;
+}

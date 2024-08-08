@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Pollo Loco</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="models/drawable-object.class.js"></script>
+    <script src="models/moveable-object.class.js"></script>
+    <script src="models/status-bar.class.js"></script>
+    <script src="models/coinbar.class.js"></script>
+    <script src="models/bottlebar.class.js"></script>
+    <script src="models/character.class.js"></script>
+    <script src="models/chicken.class.js"></script>
+    <script src="models/small-chicken.class.js"></script>
+    <script src="models/cloud.class.js"></script>
+    <script src="models/coins.class.js"></script>
+    <script src="models/bottles.class.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="models/background-object.class.js"></script>
+    <script src="models/keyboard.class.js"></script>
+    <script src="models/level.class.js"></script>
+    <script src="models/throwable-object.class.js"></script>
+    <script src="models/endboss.class.js"></script>
+    <script src="models/endboss-bar.class.js"></script>
+    <script src="level1.js"></script>
+    <script defer src="js/game.js"></script>
+    <link rel="shortcut icon" href="img/4_enemie_boss_chicken/2_alert/G11.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="rotateDevice">Please rotate device to play !</div>
+    <div id="fullscreen">
+        <h1 id="h1">El Pollo Loco</h1>
+        <div class="canvasAndGameScreen">
+            <img id="gameOverScreen" src="../img/9_intro_outro_screens/game_over/game over!.png">
+            <img id="gameWonScreen" src="../img/9_intro_outro_screens/win/win_2.png">
+            <canvas id="canvas" width="720" height="480"></canvas>
+            <div id="buttons">
+                <div id="btnLeftRight">
+                    <button id="btnLeft">←</button>
+                    <button id="btnRight">→</button>
+                </div>
+                <div id="buttonsCenter">
+                    <button onclick="checkMute(), blur()" id="muteButton"></button>
+                    <button onclick="restart(), blur()" id="restartButton"></button>
+                    <button onclick="checkScreen(), blur()" id="fullscreenButton"></button>
+                </div>
+                <div id="btnJumpThrow">
+                    <button id="btnJump">↑</button>
+                    <button id="btnThrow">↷</button>
+                </div>
+            </div>
+        </div>
+        <div class="startScreenButtons">
+            <div id="startScreen">
+                <img class="woodboard" src="img/wood.png" draggable="false">
+                <img class="sombrero" src="img/sombrero.png" draggable="false">
+                <p onclick="startGame()" class="play">PLAY</p>
+            </div>
+            <div id="howToPlayButton">
+                <img class="woodboard2" src="img/wood.png" draggable="false">
+                <p onclick="introScreen()" class="howToPlay">HOW TO PLAY</p>
+            </div>
+        </div>
+        <div id="jura">
+            <a target="_blank" href="jura/dataprotection.html">Data protection</a>
+            <a target="_blank" href="jura/legalnotice.html">Legal notice</a>
+        </div>
+        <div id="introScreen">
+            <div class="container">
+                <div class="subheadline">
+                    <h2>Move</h2>
+                    <img class="wood" src="img/wood.png" draggable="false">
+                </div>
+                <img class="characterImage" src="img/2_character_pepe/2_walk/W-22.png" draggable="false">
+                <div class="text">
+                    Use <div class="left">←</div> to run left,<div class="space">SPACE</div> to jump and <div
+                        class="right">
+                        →</div> to run right
+                </div>
+            </div>
+            <div class="container">
+                <div class="subheadline">
+                    <h2>Collect</h2>
+                    <img class="wood" src="img/wood.png" draggable="false">
+                </div>
+                <div class="coinAndSalsa">
+                    <img class="coinImage" src="img/8_coin/coin_2.png" draggable="false">
+                    <img class="salsaImage" src="img/6_salsa_bottle/salsa_bottle.png" draggable="false">
+                </div>
+                <div class="text">
+                    <p>Collect coins and salsas.</p>
+                    <p>Use
+                    <div class="d">D</div> to throw salsas</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="subheadline">
+                    <h2>Kill</h2>
+                    <img class="wood" src="img/wood.png" draggable="false">
+                </div>
+                <img class="chickenImage" src="img/4_enemie_boss_chicken/2_alert/G11.png" draggable="false">
+                <div class="text">
+                    <p>Jump or throw salsas at enemies to kill them.<br> Kill el pollo loco to win</p>
+                </div>
+            </div>
+        </div>
+        <div id="previousNext">
+            <div onclick="goBack()" class="previous">
+                <img class="previousWood" src="img/wood.png" draggable="false">
+                <h2 class="goBack">Go back</h2>
+            </div>
+            <div onclick="startGame()" class="next">
+                <img class="nextWood" src="img/wood.png" draggable="false">
+                <h2 class="startGame">start Game</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
